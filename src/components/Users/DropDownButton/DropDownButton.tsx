@@ -52,7 +52,7 @@ const DropDownButton: React.FC<DropDownButtonProps> = ({
       {isOpen && (
         <div className="dropdown__body">
           <div className="dropdown__list">
-            {list.map((item) => (
+            {list.map((item,i) => (
               <div
                 key={item.value}
                 onClick={() => handleItemClick(item.value)}

@@ -20,7 +20,6 @@ const Users = () => {
 
     return matchesDepartment && matchesCountry && matchesStatus;
   });
-
   
   return (
     <div className="users">
@@ -54,7 +53,7 @@ const Users = () => {
               <div className="UserItem__country">{elem.country.name}</div>
               <div className="UserItem__status">{elem.status.value}</div>
               <div className="userItem__delete">
-                <img src="/src/assets/bin.svg" alt="" />
+                <img src="/src/assets/bin.svg" alt=""/>
               </div>
             </div>
           ))}

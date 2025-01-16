@@ -40,12 +40,18 @@ const usersSlice = createSlice({
         status: null,
       };
     },
+    updateUser: (state, action: PayloadAction<User>) => {
+      const index = state.users.findIndex(user => user.name === action.payload.name);
+      if (index !== -1) {
+        state.users[index] = action.payload;
+      }
+    },
     setOpenModal: (state,action: PayloadAction<boolean>) => {
       state.openModal = action.payload
     }
   },
 });
 
-export const { addUser, setFilters, resetFilters,setOpenModal } = usersSlice.actions;
+export const { addUser, setFilters, resetFilters,setOpenModal,updateUser } = usersSlice.actions;
 
 export default usersSlice.reducer;
