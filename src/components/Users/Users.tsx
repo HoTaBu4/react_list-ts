@@ -1,12 +1,13 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import UserItem from "./UserItem/UserItem";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store/store";
 import Dropdown from "./dropdown/Dropdown";
 import './users.scss'
+import { setOpenModal } from "../../store/usersSlice";
 
 const Users = () => {
   const { users: userList, filters } = useSelector((state: RootState) => state.users);
-
+  const dispatch = useDispatch<AppDispatch>();
+  
   // Apply filters to user list
   const filteredUsers = userList.filter((user) => {
     const matchesDepartment = filters.department.length
@@ -32,7 +33,9 @@ const Users = () => {
           <Dropdown/>
           <button 
             className="users__add-button" 
-            onClick={() => {}}>Add User</button>
+            onClick={() => {
+              dispatch(setOpenModal(true))
+            }}>Add User</button>
         </div>
       </div>
       <div className="users__block">

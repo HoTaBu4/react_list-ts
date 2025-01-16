@@ -10,6 +10,7 @@ interface usersState {
     country: string | null;
     status: string | null;
   };
+  openModal:boolean
 }
 
 const initialState: usersState = {
@@ -19,6 +20,7 @@ const initialState: usersState = {
     country: null,
     status: null,
   },
+  openModal:false,
 };
 
 const usersSlice = createSlice({
@@ -38,9 +40,12 @@ const usersSlice = createSlice({
         status: null,
       };
     },
+    setOpenModal: (state,action: PayloadAction<boolean>) => {
+      state.openModal = action.payload
+    }
   },
 });
 
-export const { addUser, setFilters, resetFilters } = usersSlice.actions;
+export const { addUser, setFilters, resetFilters,setOpenModal } = usersSlice.actions;
 
 export default usersSlice.reducer;
