@@ -1,0 +1,45 @@
+.users {
+
+  &__title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 6px;
+  }
+
+  &__buttons {
+    margin-bottom: 40px;
+  }
+
+  &__controllers {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__add-button {
+    width: 150px;
+    border: 1px solid black;
+  }
+
+  &__block {
+
+  }
+
+  &__block-header,&__block-body {
+    border: 1px solid #E3E8EE;
+
+  }
+}
+.userItem{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 0.5fr 0.25fr;
+  padding: 0 30px;
+  align-items: center;
+  height: 86px;
+  &--header {
+    border: 1px solid #E3E8EE;
+  }
+}
