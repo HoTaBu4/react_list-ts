@@ -48,10 +48,13 @@ const usersSlice = createSlice({
     },
     setOpenModal: (state,action: PayloadAction<boolean>) => {
       state.openModal = action.payload
-    }
+    },
+    deleteUser: (state, action: PayloadAction<string>) => {
+      state.users = state.users.filter(user => user.name !== action.payload); // Видаляємо користувача за ім'ям
+    },
   },
 });
 
-export const { addUser, setFilters, resetFilters,setOpenModal,updateUser } = usersSlice.actions;
+export const { addUser, setFilters, resetFilters,setOpenModal,updateUser,deleteUser} = usersSlice.actions;
 
 export default usersSlice.reducer;

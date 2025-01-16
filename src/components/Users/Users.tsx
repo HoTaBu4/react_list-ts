@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store/store";
 import Dropdown from "./dropdown/Dropdown";
 import './users.scss'
-import { setOpenModal } from "../../store/usersSlice";
+import { deleteUser, setOpenModal } from "../../store/usersSlice";
 
 const Users = () => {
   const { users: userList, filters } = useSelector((state: RootState) => state.users);
@@ -20,6 +20,11 @@ const Users = () => {
 
     return matchesDepartment && matchesCountry && matchesStatus;
   });
+
+  const handleDelete = (userName: string) => {
+    // Викликаємо action для видалення користувача
+    dispatch(deleteUser(userName));
+  }
   
   return (
     <div className="users">
@@ -53,7 +58,7 @@ const Users = () => {
               <div className="UserItem__country">{elem.country.name}</div>
               <div className="UserItem__status">{elem.status.value}</div>
               <div className="userItem__delete">
-                <img src="/src/assets/bin.svg" alt=""/>
+                <img src="/src/assets/bin.svg" alt="" onClick={() =>handleDelete(elem.name)}/>
               </div>
             </div>
           ))}
