@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import './homestyle.scss'
+import PopUp from "./PopUp/PopUp";
 
 const Home = () => {
   return (
@@ -9,8 +10,8 @@ const Home = () => {
         <Link to={'/users'} className="home__header-button">Users</Link>
       </header>
       <main className="home__main">
+        <PopUp/>
         <div className="home__wrapper">
-          
           <Outlet/>
         </div>
       </main>

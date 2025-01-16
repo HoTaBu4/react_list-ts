@@ -30,16 +30,13 @@
     }
   }
 
-  // .home__main
-
   &__main {
     flex: 1 0 auto;
     
   }
 
-  // .home__wrapper
-
   &__wrapper {
+    position: relative;
     border: 1px solid black;
     margin: 80px 100px;
     padding: 80px;

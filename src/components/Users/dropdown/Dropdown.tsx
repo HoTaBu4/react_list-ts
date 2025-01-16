@@ -115,7 +115,7 @@ const Users: React.FC = () => {
         </div>
 
         {/* Status Filter */}
-        <div className="dropdown dropdown-status">
+        <div className="dropdown">
           <div className="dropdown__head" onClick={() => handleDropdownToggle('status')}>
             {filters.status ? filters.status : 'status'} 
             <img
